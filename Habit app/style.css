@@ -1,0 +1,88 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  background: #f4f5f7;
+  color: #222;
+  margin: 0;
+  padding: 40px 16px;
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+#habit-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+#habit-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2f80ed;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1c6ad6;
+}
+
+#habit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.habit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.habit input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.habit .name {
+  flex: 1;
+  font-size: 17px;
+}
+
+.habit.done .name {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.habit .remove {
+  background: #e5484d;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.habit .remove:hover {
+  background: #c93a3f;
+}

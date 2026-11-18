@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# OneDrive / Office temp files
+~$*
+
+# Editors (the shared .vscode/settings.json stays tracked)
+.idea/
+*.swp
+*~
+.vscode/*
+!.vscode/settings.json
+
+# Logs and backups
+*.log
+*.bak
+
+# Secrets - never commit these
+.env
+.env.*
+
+# Dependencies (not used here, but kept out if ever added)
+node_modules/
