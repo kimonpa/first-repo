@@ -44,7 +44,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
-  border: 3px solid var(--border);
+  border: 10px solid #1e6fe0;
   flex-shrink: 0;
 }
 
@@ -172,4 +172,27 @@ h2 {
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+/* Title colours: each title group has its own colour. */
+.site-header h1 {
+  color: #c62828;
+}
+
+#about h2 {
+  color: #e67e00;
+}
+
+#experience h2,
+#experience h3 {
+  color: #2e8b57;
+}
+
+#projects h2,
+#projects h3 {
+  color: #7b3fbf;
+}
+
+#contact h2 {
+  color: #00838f;
 }
