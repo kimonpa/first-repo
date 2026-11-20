@@ -53,6 +53,30 @@ button:hover {
   margin: 0;
 }
 
+#habit-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  color: #666;
+  font-size: 15px;
+}
+
+#clear-completed {
+  background: #6b7280;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+#clear-completed:hover:not(:disabled) {
+  background: #4b5563;
+}
+
+#clear-completed:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .habit {
   display: flex;
   align-items: center;

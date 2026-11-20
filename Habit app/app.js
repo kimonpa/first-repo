@@ -5,6 +5,8 @@ const STORAGE_KEY = "habits";
 const form = document.getElementById("habit-form");
 const input = document.getElementById("habit-input");
 const list = document.getElementById("habit-list");
+const countLabel = document.getElementById("habit-count");
+const clearButton = document.getElementById("clear-completed");
 
 // Loaded from storage at start-up; each habit is { id, name, doneOn }.
 let habits = loadHabits();
@@ -58,6 +60,17 @@ function render() {
     row.append(checkbox, name, removeButton);
     list.appendChild(row);
   });
+
+  renderFooter();
+}
+
+// Updates the "N habits left" counter and enables "Clear completed" only when something is done.
+function renderFooter() {
+  const doneCount = habits.filter((h) => h.doneOn === today()).length;
+  const remaining = habits.length - doneCount;
+
+  countLabel.textContent = `${remaining} ${remaining === 1 ? "habit" : "habits"} left`;
+  clearButton.disabled = doneCount === 0;
 }
 
 // Adds a new, not-yet-done habit with the given name, then saves and redraws.
@@ -81,6 +94,16 @@ function removeHabit(id) {
   saveHabits();
   render();
 }
+
+// Deletes every habit that is marked done today, then saves and redraws.
+function clearCompleted() {
+  habits = habits.filter((h) => h.doneOn !== today());
+  saveHabits();
+  render();
+}
+
+// Handles the Clear completed button.
+clearButton.addEventListener("click", clearCompleted);
 
 // Handles the Add button / Enter key: adds the typed habit and clears the text field.
 form.addEventListener("submit", (event) => {
