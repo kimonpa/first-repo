@@ -19,3 +19,4 @@ The folder holds two independent projects. Each is plain HTML/CSS/JS with no bui
 - Folder paths contain spaces (the workspace lives under OneDrive), so always quote paths in shell commands. Linked file names need URL encoding in HTML (for example `Photo%20KP.jpg`).
 - Don't commit or push unless the user asks.
 - There is no `claude-danger` alias (`--dangerously-skip-permissions`) any more; it was removed from `~/.zshrc`, so expect permission prompts.
+- Before every commit, scan the staged changes (`git diff --cached`) for anything that looks like an API key, password, or token. Flag anything that should not be committed, and don't commit until the user has seen the flags.
